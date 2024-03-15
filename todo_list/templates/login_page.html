@@ -1,0 +1,145 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Scheduler</title>
+    <link rel="stylesheet" href="static/login_style.css" />
+    <link href="{% static 'assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  </head>
+  <body>
+    <main style="background-color:#1E2829">
+      <div class="box">
+        <div class="inner-box">
+          <div class="forms-wrap">
+            <form action="{% url 'login' %}" method="POST" autocomplete="off" class="sign-in-form">
+              {% csrf_token %}
+              <div class="logo">
+                <h4 class="animate__animated animate__fadeInDown">Task Scheduler</h4>
+              </div>
+
+              <div class="heading">
+                <h2>Welcome Back</h2>
+                <h6>Not registred yet?</h6>
+                <a href="#" class="toggle">Sign up</a>
+              </div>
+
+              <div class="actual-form">
+                <div class="input-wrap">
+                  <input
+                    type="text"
+                    name="email"
+                    minlength="4"
+                    class="input-field"
+                    autocomplete="off"
+                    required
+                  />
+                  <label>Email</label>
+                </div>
+
+                <div class="input-wrap">
+                  <input
+                    type="password"
+                    name="password"
+                    minlength="4"
+                    class="input-field"
+                    autocomplete="off"
+                    required
+                  />
+                  <label>Password</label>
+                </div>
+
+                <input type="submit" value="Sign In" class="sign-btn" />
+
+              </div>
+            </form>
+
+            <form action="{% url 'register' %}" method="POST" autocomplete="off" class="sign-up-form">
+              {% csrf_token %}
+              <div class="logo">
+                <h4>Task Scheduler</h4>
+              </div>
+
+              <div class="heading">
+                <h2>Let's Get Started</h2>
+                <h6>Already have an account?</h6>
+                <a href="#" class="toggle">Sign in</a>
+              </div>
+
+              <div class="actual-form">
+                <div class="input-wrap">
+                  <input
+                    type="text"
+                    name="first_name"
+                    minlength="4"
+                    class="input-field"
+                    autocomplete="off"
+                    required
+                  />
+                  <label>Name</label>
+                </div>
+                
+                <div class="input-wrap">
+                  <input
+                    type="email"
+                    name="email"
+                    class="input-field"
+                    autocomplete="off"
+                    required
+                  />
+                  <label>Email</label>
+                </div>
+
+                <div class="input-wrap">
+                  <input
+                    type="password"
+                    name="password"
+                    minlength="4"
+                    class="input-field"
+                    autocomplete="off"
+                    required
+                  />
+                  <label>Password</label>
+                </div>
+
+                <input type="submit" value="Sign Up" class="sign-btn" />
+
+              </div>
+            </form>
+          </div>
+
+          <div class="carousel">
+            <div class="images-wrapper">
+              <img src="static/assets/img/image1.png" class="image img-1 show" alt="" />
+              <img src="static/assets/img/image2.png" class="image img-2" alt="" />
+              <img src="static/assets/img/image3.png" class="image img-3" alt="" />
+            </div>
+
+            <div class="text-slider">
+              <div class="text-wrap">
+                <div class="text-group">
+                  <h2>Create your own Standard</h2>
+                  <h2>Hope is a good thing</h2>
+                  <h2>Invite your friends</h2>
+                </div>
+              </div>
+
+              <div class="bullets">
+                <span class="active" data-value="1"></span>
+                <span data-value="2"></span>
+                <span data-value="3"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Javascript file -->
+
+    <script src="static/app.js"></script>
+  </body>
+</html>
